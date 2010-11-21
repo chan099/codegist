@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.codegist</groupId>
+    <artifactId>codegist-parent</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+    <name>CodeGist</name>
+    <url>http://www.codegist.org/</url>
+
+    <description>CodeGist projects</description>
+
+    <modules>
+        <module>common</module>
+        <module>crest</module>
+    </modules>
+
+    <properties>
+        <project.developer.lgilles.name>Laurent Gilles</project.developer.lgilles.name>
+        <project.developer.lgilles.email>laurent.gilles@codegist.org</project.developer.lgilles.email>
+
+        <project.javadoc.javase>http://download.oracle.com/javase/1.5.0/docs/api/</project.javadoc.javase>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    </properties>
+
+    <developers>
+        <developer>
+            <id>lgilles</id>
+            <name>${project.developer.lgilles.name}</name>
+            <email>${project.developer.lgilles.email}</email>
+            <timezone>0</timezone>
+            <roles>
+                <role>lead</role>
+                <role>architect</role>
+                <role>developer</role>
+            </roles>
+        </developer>
+    </developers>
+
+    <scm>
+        <url>https://github.com/codegist/codegist</url>
+        <connection>scm:git:git://github.com/codegist/codegist.git</connection>
+        <developerConnection>scm:git:git://github.com/codegist/codegist.git</developerConnection>
+    </scm>
+
+    <issueManagement>
+        <system>Github Issue Tracker</system>
+        <url>https://github.com/codegist/codegist/issues</url>
+    </issueManagement>
+
+    <licenses>
+        <license>
+            <name>Apache Software License - Version 2.0</name>
+            <url>LICENSE</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-site-plugin</artifactId>
+                    <version>2.1.1</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                    <source>1.5</source>
+                    <target>1.5</target>
+                    <fork>true</fork>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.3.1</version>
+                <configuration>
+                    <archive>
+                        <manifestEntries>
+                            <Title>${project.name}</Title>
+                            <Version>${project.version}</Version>
+                            <Vendor-Name>${project.developer.lgilles.name}</Vendor-Name>
+                            <Vendor-Email>${project.developer.lgilles.email}</Vendor-Email>
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+
+                <!--<executions>-->
+                <!--<execution>-->
+                <!--<goals>-->
+                <!--<goal>test-jar</goal>-->
+                <!--</goals>-->
+                <!--</execution>-->
+                <!--</executions>-->
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>2.1.2</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>2.4.3</version>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.6</version>
+                <configuration>
+                    <includes>
+                        <include>**/*Test.java</include>
+                    </includes>
+                    <forkMode>once</forkMode>
+                </configuration>
+            </plugin>
+        </plugins>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+            <resource>
+                <directory>${project.basedir}</directory>
+                <includes>
+                    <include>LICENSE</include>
+                </includes>
+            </resource>
+        </resources>
+    </build>
+
+    <reporting>
+        <outputDirectory>${project.build.directory}/site</outputDirectory>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-project-info-reports-plugin</artifactId>
+                <version>2.2</version>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>index</report>
+                            <report>summary</report>
+                            <report>project-team</report>
+                            <report>license</report>
+                            <report>modules</report>
+                            <report>dependencies</report>
+                            <report>dependencies-convergence</report>
+                            <report>dependencies-management</report>
+                            <report>issue-tracking</report>
+                            <report>scm</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.7</version>
+                <configuration>
+                    <charset>UTF-8</charset>
+                    <show>public</show>
+                    <source>1.5</source>
+                    <links>
+                        <link>${project.javadoc.javase}</link>
+                    </links>
+                </configuration>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>javadoc</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
+        </plugins>
+    </reporting>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.4</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
+            <version>1.8.5</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+</project>
