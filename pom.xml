@@ -31,7 +31,7 @@
     <name>CodeGist</name>
     <url>http://www.codegist.org/</url>
 
-    <description>CodeGist projects</description>
+    <description>CodeGist offers a set of opensource experimental projects for the java platform.</description>
 
     <modules>
         <module>common</module>
@@ -62,7 +62,7 @@
     </developers>
 
     <scm>
-        <url>https://github.com/codegist/codegist</url>
+        <url>git://github.com/codegist/codegist.git</url>
         <connection>scm:git:git://github.com/codegist/codegist.git</connection>
         <developerConnection>scm:git:git://github.com/codegist/codegist.git</developerConnection>
     </scm>
@@ -75,7 +75,7 @@
     <licenses>
         <license>
             <name>Apache Software License - Version 2.0</name>
-            <url>LICENSE</url>
+            <url>http://www.codegist.org/LICENSE.txt</url>
             <distribution>repo</distribution>
         </license>
     </licenses>
@@ -126,6 +126,18 @@
                 <!--</goals>-->
                 <!--</execution>-->
                 <!--</executions>-->
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

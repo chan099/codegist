@@ -21,14 +21,20 @@
 <project name="${project.name}">
     <publishDate format="yyyy-MM-dd" position="right"/>
     <!--version position="right"/-->
-    <skin>
+   <skin>
         <groupId>org.apache.maven.skins</groupId>
         <artifactId>maven-stylus-skin</artifactId>
         <version>1.0</version>
     </skin>
+    <poweredBy>
+        <logo name="Built by Maven" href="http://maven.apache.org/" img="./images/logos/maven-feather.png"/>
+        <logo name="Powered by Google App Engine" href="http://code.google.com/appengine/" img="http://code.google.com/appengine/images/appengine-silver-120x30.gif"/>
+    </poweredBy>
+
     <body>
 
         <head>
+            <meta name="description" content="${project.description}"/>
             <script type="text/javascript">
 
               var _gaq = _gaq || [];
@@ -45,11 +51,8 @@
             </script>
         </head>
 
-        <menu name="Projects">
-            <item name="Common" href="http://common.codegist.org"/>
-            <item name="CRest" href="http://crest.codegist.org"/>
-        </menu>
-        
+        <menu ref="modules"/>
+
         <menu ref="reports"/>
 
     </body>
