@@ -37,19 +37,6 @@
 
     <description>CodeGist offers a set of opensource experimental projects for the java platform.</description>
 
-	<distributionManagement>
-		<snapshotRepository>
-			<id>sonatype-nexus-snapshots</id>
-			<name>Sonatype Nexus Snapshots</name>
-			<url>file:${user.home}/.m2/snapshot</url>
-		</snapshotRepository>
-		<repository>
-			<id>sonatype-nexus-staging</id>
-			<name>Nexus Release Repository</name>
-			<url>file:${user.home}/.m2/release</url>
-		</repository>
-	</distributionManagement>
-
     <properties>
         <project.developer.lgilles.name>Laurent Gilles</project.developer.lgilles.name>
         <project.developer.lgilles.email>laurent.gilles@codegist.org</project.developer.lgilles.email>
@@ -135,14 +122,6 @@
                         </manifestEntries>
                     </archive>
                 </configuration>
-
-                <!--<executions>-->
-                <!--<execution>-->
-                <!--<goals>-->
-                <!--<goal>test-jar</goal>-->
-                <!--</goals>-->
-                <!--</execution>-->
-                <!--</executions>-->
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -250,7 +229,6 @@
         </plugins>
     </reporting>
 
-    <!--mvn verify -DperformRelease=true -Dgpg.passphrase=-->
     <profiles>
         <profile>
             <id>release-sign-artifacts</id>
