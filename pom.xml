@@ -50,11 +50,6 @@
 		</repository>
 	</distributionManagement>
 
-    <modules>
-        <module>common</module>
-        <module>crest</module>
-    </modules>
-
     <properties>
         <project.developer.lgilles.name>Laurent Gilles</project.developer.lgilles.name>
         <project.developer.lgilles.email>laurent.gilles@codegist.org</project.developer.lgilles.email>

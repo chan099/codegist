@@ -51,7 +51,10 @@
             </script>
         </head>
 
-        <menu ref="modules"/>
+        <menu name="Projects">
+            <item href="CRest" name="http://crest.codegist.org"/>
+            <item href="CodeGist Common" name="http://common.codegist.org"/>
+        </menu>
 
         <menu ref="reports"/>
 
