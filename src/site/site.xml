@@ -52,8 +52,8 @@
         </head>
 
         <menu name="Projects">
-            <item href="CRest" name="http://crest.codegist.org"/>
-            <item href="CodeGist Common" name="http://common.codegist.org"/>
+            <item name="CRest" href="http://crest.codegist.org"/>
+            <item name="CodeGist Common" href="http://common.codegist.org"/>
         </menu>
 
         <menu ref="reports"/>
