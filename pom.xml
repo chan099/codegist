@@ -59,7 +59,7 @@
     </developers>
 
     <scm>
-        <url>scm:git:git@github.com:codegist/codegist.git</url>
+        <url>https://github.com/codegist/codegist</url>
         <connection>scm:git:git@github.com:codegist/codegist.git</connection>
         <developerConnection>scm:git:git@github.com:codegist/codegist.git</developerConnection>
     </scm>
