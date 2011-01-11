@@ -19,36 +19,24 @@
   -->
 
 <project name="${project.name}">
+
     <publishDate format="yyyy-MM-dd" position="right"/>
-    <!--version position="right"/-->
-   <skin>
-        <groupId>org.apache.maven.skins</groupId>
-        <artifactId>maven-stylus-skin</artifactId>
-        <version>1.0</version>
-    </skin>
+
+    <version position="left"/>
+
     <poweredBy>
         <logo name="Built by Maven" href="http://maven.apache.org/" img="./images/logos/maven-feather.png"/>
         <logo name="Powered by Google App Engine" href="http://code.google.com/appengine/" img="http://code.google.com/appengine/images/appengine-silver-120x30.gif"/>
     </poweredBy>
 
+    <custom>
+        <analytics>UA-19826844-1</analytics>
+    </custom>
+
     <body>
 
         <head>
             <meta name="description" content="${project.description}"/>
-            <script type="text/javascript">
-
-              var _gaq = _gaq || [];
-              _gaq.push(['_setAccount', 'UA-19826844-1']);
-              _gaq.push(['_setDomainName', '.codegist.org']);
-              _gaq.push(['_trackPageview']);
-
-              (function() {
-                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-              })();
-
-            </script>
         </head>
 
         <menu name="Projects">
@@ -59,4 +47,11 @@
         <menu ref="reports"/>
 
     </body>
+    
+    <skin>
+        <groupId>org.codegist</groupId>
+        <artifactId>codegist-maven-skin</artifactId>
+        <version>1.0.0</version>
+    </skin>
+
 </project>
