@@ -31,13 +31,10 @@
 
     <custom>
         <analytics>UA-19826844-1</analytics>
+        <addthis.username>codegist</addthis.username>
     </custom>
 
     <body>
-
-        <head>
-            <meta name="description" content="${project.description}"/>
-        </head>
 
         <menu name="Projects">
             <item name="CRest" href="http://crest.codegist.org"/>
@@ -51,7 +48,7 @@
     <skin>
         <groupId>org.codegist</groupId>
         <artifactId>codegist-maven-skin</artifactId>
-        <version>1.0.0</version>
+        <version>1.0.2</version>
     </skin>
 
 </project>
