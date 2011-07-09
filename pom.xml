@@ -176,6 +176,12 @@
                         <issueLinkTemplate>%URL%/%ISSUE%</issueLinkTemplate>
                     </configuration>
                 </plugin>
+                <!-- To define the plugin version in your parent POM -->
+                <plugin>
+                  <groupId>org.codehaus.mojo</groupId>
+                  <artifactId>sonar-maven-plugin</artifactId>
+                  <version>1.0-beta-2</version>
+                </plugin>
             </plugins>
         </pluginManagement>
         <plugins>
@@ -206,6 +212,14 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                  <systemProperties>
+                     <property>
+                        <name>cobertura.use.java.nio</name>
+                        <value>false</value>
+                     </property>
+                  </systemProperties>
+               </configuration>
             </plugin>
         </plugins>
         <resources>
