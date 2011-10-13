@@ -48,7 +48,7 @@
     <skin>
         <groupId>org.codegist</groupId>
         <artifactId>codegist-maven-skin</artifactId>
-        <version>1.0.3-SNAPSHOT</version>
+        <version>1.0.3</version>
     </skin>
 
 </project>
