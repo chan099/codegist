@@ -30,8 +30,8 @@
     </poweredBy>
 
     <custom>
-        <analytics>UA-19826844-1</analytics>
-        <addthis.username>codegist</addthis.username>
+        <analytics>${account.google-analytics}</analytics>
+        <addthis.username>${account.addthis}</addthis.username>
     </custom>
 
     <body>
